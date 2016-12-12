@@ -3,10 +3,12 @@ augroup readmestart
 augroup END
 
 function! Readmestart_open_readme()
-  if !empty(glob("README"))
-    execute "view README"
-  endif
-  if !empty(glob("README.*"))
-    execute join(["view", glob("README.*")])
+  if argc() == 0
+    if !empty(glob("README"))
+      execute "view README"
+    endif
+    if !empty(glob("README.*"))
+      execute join(["view", glob("README.*")])
+    endif
   endif
 endfunction
